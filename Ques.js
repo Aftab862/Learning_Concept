@@ -281,3 +281,25 @@ const folderStructure = [
 
 // folderStructure.forEach((node) => traverse(node));
 // console.log(result);
+
+
+//---------------write a function to search for a target value. You must return the index of the
+// target if found, otherwise return -1.
+
+
+// function searchRotatedArray(arr , target){
+    
+//     for (let num of arr){
+//         console.log(num)
+//         if(num===target){
+//             return arr.indexOf(num);
+//         }
+//     }
+//     return -1
+    
+    
+// }
+// const arr = [4,5,6,7,0,1,2], target = 7
+
+// const value=searchRotatedArray(arr, target);
+// console.log("value", value)
