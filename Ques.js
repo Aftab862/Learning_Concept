@@ -288,7 +288,7 @@ const folderStructure = [
 
 
 // function searchRotatedArray(arr , target){
-    
+
 //     for (let num of arr){
 //         console.log(num)
 //         if(num===target){
@@ -296,8 +296,8 @@ const folderStructure = [
 //         }
 //     }
 //     return -1
-    
-    
+
+
 // }
 // const arr = [4,5,6,7,0,1,2], target = 7
 
@@ -332,3 +332,26 @@ const folderStructure = [
 // }
 // const str="abcabcbb";
 // console.log(longestUniqueSubstring(str))
+
+// ---------------find frequency of each characte and for ...in Loop for object itration keys  ---------------------
+// const abc = "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quia!";
+// let obj = {};
+
+// for (let i of abc) {
+//   obj[i] = (obj[i] || 0) + 1;
+// }
+
+// console.log(obj)
+
+// for (let val in obj) {
+//   console.log(val, obj[val])
+// }
+
+// for (let [key, value] of Object.entries(obj)) {
+//   console.log(`Key: ${key}, Value: ${value}`);
+// }
+
+// 🔁 for...in   vs   for...of – Key Differences
+ 
+// Returns	:Keys (property names or indices)	, Values of the iterable
+// Usecase	:Best for objects	Best for arrays, strings, sets
