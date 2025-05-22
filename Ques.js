@@ -303,3 +303,32 @@ const folderStructure = [
 
 // const value=searchRotatedArray(arr, target);
 // console.log("value", value)
+
+
+// ------------------find the length of the longest substring that contains only unique characters 
+
+// function longestUniqueSubstring(s){
+// let maxLength=0;
+// for( let i=0 ;  i < s.length ; i++){
+//   let result=[];
+
+//   for (let j=i;  j<s.length ;j++){
+//     if(result.includes(s[j])){
+//       break;
+//     }
+//     else{
+//       result.push(s[j]);
+
+//     }
+
+//     if( result.length> maxLength){
+//       maxLength= result.length
+//     }
+//   }
+
+//   return maxLength
+// }
+
+// }
+// const str="abcabcbb";
+// console.log(longestUniqueSubstring(str))
