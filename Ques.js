@@ -59,37 +59,35 @@
 // {a: {b: {c: "someValue"}}}
 
 //    -------------------------program to find vowels and consonents from large string-------------------
-// const abc =
-//   "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quia!";
+const abc =
+  "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quia!";
 
-// let con = [];
-// let vow = ["a", "e", "i", "o", "u"];
-// let newVow = [];
+let con = [];
+let vow = ["a", "e", "i", "o", "u"];
+let newVow = [];
 
-// for (let i = 0; i < abc.length; i++) {
-//   if (vow.includes(abc[i])) {
-//     newVow.push(abc[i]);
-//   } else {
-//     con.push(abc[i]);
-//   }
-// }
+for (let i = 0; i < abc.length; i++) {
+  if (vow.includes(abc[i])) {
+    newVow.push(abc[i]);
+  } else {
+    con.push(abc[i]);
+  }
+}
 
-// console.log("Vowels", newVow);
-// console.log("Consonants", con);
+console.log("Vowels", newVow);
+console.log("Consonants", con);
 
 //    -------------------------program to remove duplicate elements from string-------------------
-// const abc =
-//   "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quia!";
 
-// let newStr = [];
+let newStr = [];
 
-// for (let i = 0; i < abc.length; i++) {
-//   if (!newStr.includes(abc[i])) {
-//     newStr += abc[i];
-//   }
-// }
+for (let i = 0; i < abc.length; i++) {
+  if (!newStr.includes(abc[i])) {
+    newStr += abc[i];
+  }
+}
 
-// console.log("New String", newStr);
+console.log("New String", newStr);
 
 //    -------------------------program to find the individual character length from string-------------------
 
@@ -118,25 +116,23 @@
 //   { "!": 1 })
 // ];
 
-// const abc =
-//   "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quia!";
 
-// const newStr = [...new Set(abc.split(""))];
-// const wholeStr = Array.from(abc);
-// const result = [];
-// let count = 0;
-// for (let i = 0; i < newStr.length; i++) {
-//   for (let j = 0; j < wholeStr.length; j++) {
-//     if (newStr[i] === wholeStr[j]) {
-//       count++;
-//     }
-//   }
+const uniqueArray = [...new Set(abc.split(""))];
+const wholeStr = Array.from(abc);
+const result1 = [];
+let count = 0;
+for (let i = 0; i < uniqueArray.length; i++) {
+  for (let j = 0; j < wholeStr.length; j++) {
+    if (uniqueArray[i] === wholeStr[j]) {
+      count++;
+    }
+  }
 
-//   result.push({ [newStr[i]]: count });
-//   count = 0;
-// }
+  result1.push({ [uniqueArray[i]]: count });
+  count = 0;
+}
 
-// console.log("Result", result);
+console.log("Result1", result1);
 
 // -------------------------program to find the unique characters from string using loop-------------------
 
@@ -162,39 +158,39 @@
 
 // console.log("Unique characters:", newStr.join(""));
 
-// -------------------------program to make reverse string-------------------
-// function reverseEachWord(sentence) {
-//   // Split the sentence into individual words
-//   let wordList = sentence.split(" ");
-//   console.log("Words:", wordList, wordList.length);
+// -------------------------program to make reverse string words-------------------
+function reverseEachWord(sentence) {
+  // Split the sentence into individual words
+  let wordList = sentence.split(" ");
+  console.log("Words:", wordList, wordList.length);
 
-//   // This will hold the reversed words
-//   let reversedList = [];
+  // This will hold the reversed words
+  let reversedList = [];
 
-//   // Loop through each word
-//   for (let word of wordList) {
-//     let reversed = "";
+  // Loop through each word
+  for (let word of wordList) {
+    let reversed = "";
 
-//     // Go through the word backwards
-//     for (let i = word.length - 1; i >= 0; i--) {
-//       reversed += word[i]; // Add each character in reverse
-//     }
+    // Go through the word backwards
+    for (let i = word.length - 1; i >= 0; i--) {
+      reversed += word[i]; // Add each character in reverse
+    }
 
-//     // Add the reversed word to the list
-//     reversedList.push(reversed);
-//   }
+    // Add the reversed word to the list
+    reversedList.push(reversed);
+  }
 
-//   // Join them back into a sentence
-//   return reversedList.join(" ");
-// }
+  // Join them back into a sentence
+  return reversedList.join(" ");
+}
 
-// // Example usage:
-// console.log(reverseEachWord("hello world")); // "olleh dlrow"
-// const inputString = "hy aftab ahmad";
-// const reversedString = reverseEachWord(inputString);
+// Example usage:
+console.log(reverseEachWord("hello world")); // "olleh dlrow"
+const inputString = "hy aftab ahmad";
+const reversedString = reverseEachWord(inputString);
 
-// console.log("Original:", inputString);
-// console.log("Reversed:", reversedString);
+console.log("Original:", inputString);
+console.log("Reversed:", reversedString);
 // --------------------------------------------Recursive------------------------------------------------
 
 const folderStructure = [
@@ -357,6 +353,7 @@ const folderStructure = [
 // Usecase	:Best for objects	Best for arrays, strings, sets
 
 // --------------------flat an array using recursion------------------------------------
+
 function flatenFuntion(data, result = []) {
   if (Array.isArray(data)) {
     data.forEach(item => {
@@ -372,3 +369,25 @@ function flatenFuntion(data, result = []) {
 const myArr = [1, 2, [3, [4, [5], 6], 7], 8];
 let result = []
 console.log(flatenFuntion(myArr, result));
+
+
+//-------------------------------------traverse and found if sum of 2 values = target value --------
+const nums = [1, 2, 4,5, 8];
+
+for(let n=0 ;n< nums.length ; n++){
+  let cont=true;
+  for(let j=0 ; j<nums.length ;j++){
+    if(nums[n]+nums[j]===9){
+      console.log( " found  : i+j===9", nums[n] ,nums[j] );
+      cont=false;
+      break;
+    }
+  }
+
+  if(!cont){
+    break;
+  }
+}
+
+
+
