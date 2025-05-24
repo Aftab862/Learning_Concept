@@ -352,6 +352,23 @@ const folderStructure = [
 // }
 
 // 🔁 for...in   vs   for...of – Key Differences
- 
+
 // Returns	:Keys (property names or indices)	, Values of the iterable
 // Usecase	:Best for objects	Best for arrays, strings, sets
+
+// --------------------flat an array using recursion------------------------------------
+function flatenFuntion(data, result = []) {
+  if (Array.isArray(data)) {
+    data.forEach(item => {
+
+      flatenFuntion(item, result); // Recursive call
+    })
+  } else {
+    result.push(data);
+  }
+  return result;
+}
+
+const myArr = [1, 2, [3, [4, [5], 6], 7], 8];
+let result = []
+console.log(flatenFuntion(myArr, result));
