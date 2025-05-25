@@ -372,22 +372,103 @@ console.log(flatenFuntion(myArr, result));
 
 
 //-------------------------------------traverse and found if sum of 2 values = target value --------
-const nums = [1, 2, 4,5, 8];
+const nums = [1, 2, 4, 5, 8];
 
-for(let n=0 ;n< nums.length ; n++){
-  let cont=true;
-  for(let j=0 ; j<nums.length ;j++){
-    if(nums[n]+nums[j]===9){
-      console.log( " found  : i+j===9", nums[n] ,nums[j] );
-      cont=false;
+for (let n = 0; n < nums.length; n++) {
+  let cont = true;
+  for (let j = 0; j < nums.length; j++) {
+    if (nums[n] + nums[j] === 9) {
+      console.log(" found  : i+j===9", nums[n], nums[j]);
+      cont = false;
       break;
     }
   }
 
-  if(!cont){
+  if (!cont) {
     break;
   }
 }
 
+// -------------------------------------Calculate the sum of all elements in this longest unique subarray.
+// function longestUniqueSubarray(s) {
+//   let maxLength = 0;
+//   let finalResult = [];
+//   for (let i = 0; i < s.length; i++) {
+//     let result = [];
+
+//     for (let j = i; j < s.length; j++) {
+//       if (result.includes(s[j])) {
+//         break;
+//       }
+//       else {
+//         result.push(s[j]);
+
+//       }
+
+//       if (result.length > maxLength) {
+//         maxLength = result.length
+//         finalResult = result;
+//       }
+//     }
+
+//   }
+//   return finalResult
+
+// }
+
+// // Example usage
+// const nums = [2, -1, 3, 4, -1, 2, 1, -5, 4];
+// const res = longestUniqueSubarray(nums); // Output: 6
+// console.log("Response ", res)
+// let sum = 0;
+// for (let i of res) {
+//   sum = sum + i;
+// }
+
+// console.log(sum)
+
+// -------------------------------------------------Valid Parentheses------------
+
+function isValid(s) {
+  const stack = [];
+  
+  // We will check closing brackets against their matching opening ones
+  function isMatching(open, close) {
+    if (open === '(' && close === ')') return true;
+    if (open === '{' && close === '}') return true;
+    if (open === '[' && close === ']') return true;
+    return false;
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    
+    // If it's an opening bracket, push it to the stack
+    if (char === '(' || char === '{' || char === '[') {
+      stack.push(char);
+    } 
+    // If it's a closing bracket, check with the last opening bracket
+    else if (char === ')' || char === '}' || char === ']') {
+      if (stack.length === 0) {
+        // No opening bracket to match with
+        return false;
+      }
+      const lastOpen = stack.pop();
+      if (!isMatching(lastOpen, char)) {
+        // The popped opening bracket does not match the closing one
+        return false;
+      }
+    }
+    // If the character is not a bracket, you can choose to ignore or handle differently
+  }
+
+  // After checking all characters, stack should be empty if all brackets matched
+  return stack.length === 0;
+}
+
+// Example test:
+console.log(isValid("{[()]}"));  // true
+console.log(isValid("{[(])}"));  // false
+console.log(isValid("{{[[(())]]}}"));  // true
 
 
