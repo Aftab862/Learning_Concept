@@ -59,37 +59,35 @@
 // {a: {b: {c: "someValue"}}}
 
 //    -------------------------program to find vowels and consonents from large string-------------------
-// const abc =
-//   "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quia!";
+const abc =
+  "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quia!";
 
-// let con = [];
-// let vow = ["a", "e", "i", "o", "u"];
-// let newVow = [];
+let con = [];
+let vow = ["a", "e", "i", "o", "u"];
+let newVow = [];
 
-// for (let i = 0; i < abc.length; i++) {
-//   if (vow.includes(abc[i])) {
-//     newVow.push(abc[i]);
-//   } else {
-//     con.push(abc[i]);
-//   }
-// }
+for (let i = 0; i < abc.length; i++) {
+  if (vow.includes(abc[i])) {
+    newVow.push(abc[i]);
+  } else {
+    con.push(abc[i]);
+  }
+}
 
-// console.log("Vowels", newVow);
-// console.log("Consonants", con);
+console.log("Vowels", newVow);
+console.log("Consonants", con);
 
 //    -------------------------program to remove duplicate elements from string-------------------
-// const abc =
-//   "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quia!";
 
-// let newStr = [];
+let newStr = [];
 
-// for (let i = 0; i < abc.length; i++) {
-//   if (!newStr.includes(abc[i])) {
-//     newStr += abc[i];
-//   }
-// }
+for (let i = 0; i < abc.length; i++) {
+  if (!newStr.includes(abc[i])) {
+    newStr += abc[i];
+  }
+}
 
-// console.log("New String", newStr);
+console.log("New String", newStr);
 
 //    -------------------------program to find the individual character length from string-------------------
 
@@ -118,25 +116,23 @@
 //   { "!": 1 })
 // ];
 
-// const abc =
-//   "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quia!";
 
-// const newStr = [...new Set(abc.split(""))];
-// const wholeStr = Array.from(abc);
-// const result = [];
-// let count = 0;
-// for (let i = 0; i < newStr.length; i++) {
-//   for (let j = 0; j < wholeStr.length; j++) {
-//     if (newStr[i] === wholeStr[j]) {
-//       count++;
-//     }
-//   }
+const uniqueArray = [...new Set(abc.split(""))];
+const wholeStr = Array.from(abc);
+const result1 = [];
+let count = 0;
+for (let i = 0; i < uniqueArray.length; i++) {
+  for (let j = 0; j < wholeStr.length; j++) {
+    if (uniqueArray[i] === wholeStr[j]) {
+      count++;
+    }
+  }
 
-//   result.push({ [newStr[i]]: count });
-//   count = 0;
-// }
+  result1.push({ [uniqueArray[i]]: count });
+  count = 0;
+}
 
-// console.log("Result", result);
+console.log("Result1", result1);
 
 // -------------------------program to find the unique characters from string using loop-------------------
 
@@ -162,39 +158,39 @@
 
 // console.log("Unique characters:", newStr.join(""));
 
-// -------------------------program to make reverse string-------------------
-// function reverseEachWord(sentence) {
-//   // Split the sentence into individual words
-//   let wordList = sentence.split(" ");
-//   console.log("Words:", wordList, wordList.length);
+// -------------------------program to make reverse string words-------------------
+function reverseEachWord(sentence) {
+  // Split the sentence into individual words
+  let wordList = sentence.split(" ");
+  console.log("Words:", wordList, wordList.length);
 
-//   // This will hold the reversed words
-//   let reversedList = [];
+  // This will hold the reversed words
+  let reversedList = [];
 
-//   // Loop through each word
-//   for (let word of wordList) {
-//     let reversed = "";
+  // Loop through each word
+  for (let word of wordList) {
+    let reversed = "";
 
-//     // Go through the word backwards
-//     for (let i = word.length - 1; i >= 0; i--) {
-//       reversed += word[i]; // Add each character in reverse
-//     }
+    // Go through the word backwards
+    for (let i = word.length - 1; i >= 0; i--) {
+      reversed += word[i]; // Add each character in reverse
+    }
 
-//     // Add the reversed word to the list
-//     reversedList.push(reversed);
-//   }
+    // Add the reversed word to the list
+    reversedList.push(reversed);
+  }
 
-//   // Join them back into a sentence
-//   return reversedList.join(" ");
-// }
+  // Join them back into a sentence
+  return reversedList.join(" ");
+}
 
-// // Example usage:
-// console.log(reverseEachWord("hello world")); // "olleh dlrow"
-// const inputString = "hy aftab ahmad";
-// const reversedString = reverseEachWord(inputString);
+// Example usage:
+console.log(reverseEachWord("hello world")); // "olleh dlrow"
+const inputString = "hy aftab ahmad";
+const reversedString = reverseEachWord(inputString);
 
-// console.log("Original:", inputString);
-// console.log("Reversed:", reversedString);
+console.log("Original:", inputString);
+console.log("Reversed:", reversedString);
 // --------------------------------------------Recursive------------------------------------------------
 
 const folderStructure = [
@@ -288,7 +284,7 @@ const folderStructure = [
 
 
 // function searchRotatedArray(arr , target){
-    
+
 //     for (let num of arr){
 //         console.log(num)
 //         if(num===target){
@@ -296,10 +292,183 @@ const folderStructure = [
 //         }
 //     }
 //     return -1
-    
-    
+
+
 // }
 // const arr = [4,5,6,7,0,1,2], target = 7
 
 // const value=searchRotatedArray(arr, target);
 // console.log("value", value)
+
+
+// ------------------find the length of the longest substring that contains only unique characters 
+
+// function longestUniqueSubstring(s){
+// let maxLength=0;
+// for( let i=0 ;  i < s.length ; i++){
+//   let result=[];
+
+//   for (let j=i;  j<s.length ;j++){
+//     if(result.includes(s[j])){
+//       break;
+//     }
+//     else{
+//       result.push(s[j]);
+
+//     }
+
+//     if( result.length> maxLength){
+//       maxLength= result.length
+//     }
+//   }
+
+//   return maxLength
+// }
+
+// }
+// const str="abcabcbb";
+// console.log(longestUniqueSubstring(str))
+
+// ---------------find frequency of each characte and for ...in Loop for object itration keys  ---------------------
+// const abc = "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quia!";
+// let obj = {};
+
+// for (let i of abc) {
+//   obj[i] = (obj[i] || 0) + 1;
+// }
+
+// console.log(obj)
+
+// for (let val in obj) {
+//   console.log(val, obj[val])
+// }
+
+// for (let [key, value] of Object.entries(obj)) {
+//   console.log(`Key: ${key}, Value: ${value}`);
+// }
+
+// 🔁 for...in   vs   for...of – Key Differences
+
+// Returns	:Keys (property names or indices)	, Values of the iterable
+// Usecase	:Best for objects	Best for arrays, strings, sets
+
+// --------------------flat an array using recursion------------------------------------
+
+function flatenFuntion(data, result = []) {
+  if (Array.isArray(data)) {
+    data.forEach(item => {
+
+      flatenFuntion(item, result); // Recursive call
+    })
+  } else {
+    result.push(data);
+  }
+  return result;
+}
+
+const myArr = [1, 2, [3, [4, [5], 6], 7], 8];
+let result = []
+console.log(flatenFuntion(myArr, result));
+
+
+//-------------------------------------traverse and found if sum of 2 values = target value --------
+const nums = [1, 2, 4, 5, 8];
+
+for (let n = 0; n < nums.length; n++) {
+  let cont = true;
+  for (let j = 0; j < nums.length; j++) {
+    if (nums[n] + nums[j] === 9) {
+      console.log(" found  : i+j===9", nums[n], nums[j]);
+      cont = false;
+      break;
+    }
+  }
+
+  if (!cont) {
+    break;
+  }
+}
+
+// -------------------------------------Calculate the sum of all elements in this longest unique subarray.
+// function longestUniqueSubarray(s) {
+//   let maxLength = 0;
+//   let finalResult = [];
+//   for (let i = 0; i < s.length; i++) {
+//     let result = [];
+
+//     for (let j = i; j < s.length; j++) {
+//       if (result.includes(s[j])) {
+//         break;
+//       }
+//       else {
+//         result.push(s[j]);
+
+//       }
+
+//       if (result.length > maxLength) {
+//         maxLength = result.length
+//         finalResult = result;
+//       }
+//     }
+
+//   }
+//   return finalResult
+
+// }
+
+// // Example usage
+// const nums = [2, -1, 3, 4, -1, 2, 1, -5, 4];
+// const res = longestUniqueSubarray(nums); // Output: 6
+// console.log("Response ", res)
+// let sum = 0;
+// for (let i of res) {
+//   sum = sum + i;
+// }
+
+// console.log(sum)
+
+// -------------------------------------------------Valid Parentheses------------
+
+function isValid(s) {
+  const stack = [];
+  
+  // We will check closing brackets against their matching opening ones
+  function isMatching(open, close) {
+    if (open === '(' && close === ')') return true;
+    if (open === '{' && close === '}') return true;
+    if (open === '[' && close === ']') return true;
+    return false;
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    
+    // If it's an opening bracket, push it to the stack
+    if (char === '(' || char === '{' || char === '[') {
+      stack.push(char);
+    } 
+    // If it's a closing bracket, check with the last opening bracket
+    else if (char === ')' || char === '}' || char === ']') {
+      if (stack.length === 0) {
+        // No opening bracket to match with
+        return false;
+      }
+      const lastOpen = stack.pop();
+      if (!isMatching(lastOpen, char)) {
+        // The popped opening bracket does not match the closing one
+        return false;
+      }
+    }
+    // If the character is not a bracket, you can choose to ignore or handle differently
+  }
+
+  // After checking all characters, stack should be empty if all brackets matched
+  return stack.length === 0;
+}
+
+// Example test:
+console.log(isValid("{[()]}"));  // true
+console.log(isValid("{[(])}"));  // false
+console.log(isValid("{{[[(())]]}}"));  // true
+
+
