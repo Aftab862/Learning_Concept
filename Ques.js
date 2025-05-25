@@ -116,7 +116,6 @@ console.log("New String", newStr);
 //   { "!": 1 })
 // ];
 
-
 const uniqueArray = [...new Set(abc.split(""))];
 const wholeStr = Array.from(abc);
 const result1 = [];
@@ -278,10 +277,8 @@ const folderStructure = [
 // folderStructure.forEach((node) => traverse(node));
 // console.log(result);
 
-
 //---------------write a function to search for a target value. You must return the index of the
 // target if found, otherwise return -1.
-
 
 // function searchRotatedArray(arr , target){
 
@@ -293,15 +290,13 @@ const folderStructure = [
 //     }
 //     return -1
 
-
 // }
 // const arr = [4,5,6,7,0,1,2], target = 7
 
 // const value=searchRotatedArray(arr, target);
 // console.log("value", value)
 
-
-// ------------------find the length of the longest substring that contains only unique characters 
+// ------------------find the length of the longest substring that contains only unique characters
 
 // function longestUniqueSubstring(s){
 // let maxLength=0;
@@ -356,10 +351,9 @@ const folderStructure = [
 
 function flatenFuntion(data, result = []) {
   if (Array.isArray(data)) {
-    data.forEach(item => {
-
+    data.forEach((item) => {
       flatenFuntion(item, result); // Recursive call
-    })
+    });
   } else {
     result.push(data);
   }
@@ -367,9 +361,8 @@ function flatenFuntion(data, result = []) {
 }
 
 const myArr = [1, 2, [3, [4, [5], 6], 7], 8];
-let result = []
+let result = [];
 console.log(flatenFuntion(myArr, result));
-
 
 //-------------------------------------traverse and found if sum of 2 values = target value --------
 const nums = [1, 2, 4, 5, 8];
@@ -431,24 +424,24 @@ for (let n = 0; n < nums.length; n++) {
 
 function isValid(s) {
   const stack = [];
-  
+
   // We will check closing brackets against their matching opening ones
   function isMatching(open, close) {
-    if (open === '(' && close === ')') return true;
-    if (open === '{' && close === '}') return true;
-    if (open === '[' && close === ']') return true;
+    if (open === "(" && close === ")") return true;
+    if (open === "{" && close === "}") return true;
+    if (open === "[" && close === "]") return true;
     return false;
   }
 
   for (let i = 0; i < s.length; i++) {
     const char = s[i];
-    
+
     // If it's an opening bracket, push it to the stack
-    if (char === '(' || char === '{' || char === '[') {
+    if (char === "(" || char === "{" || char === "[") {
       stack.push(char);
-    } 
+    }
     // If it's a closing bracket, check with the last opening bracket
-    else if (char === ')' || char === '}' || char === ']') {
+    else if (char === ")" || char === "}" || char === "]") {
       if (stack.length === 0) {
         // No opening bracket to match with
         return false;
@@ -467,8 +460,47 @@ function isValid(s) {
 }
 
 // Example test:
-console.log(isValid("{[()]}"));  // true
-console.log(isValid("{[(])}"));  // false
-console.log(isValid("{{[[(())]]}}"));  // true
+console.log(isValid("{[()]}")); // true
+console.log(isValid("{[(])}")); // false
+console.log(isValid("{{[[(())]]}}")); // true
 
+//--------------------------------Bubble Sort---------------------------
+function BuubleSort(array) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array.length - 1 - i; j++) {
+      if (array[j] > array[j + 1]) {
+        let temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+      }
+    }
+  }
+  return array;
+}
+const array1 = [2, 32, 4, 4, 2, 4, 2, 4, 2, 4, 23, 4];
+console.log(BuubleSort(array1));
+// --------------------------------Bubble Sort by Frequency---------------------------
+function bubbleSortByFrequency(arr) {
+  let obj = {};
+  for (let n of arr) {
+    obj[n] = (obj[n] || 0) + 1;
+  }
 
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - 1 - i; j++) {
+      let freq1 = obj[arr[j]];
+      let freq2 = obj[arr[j + 1]];
+
+      if (freq1 < freq2 || (freq1 === freq2 && arr[j] > arr[j + 1])) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+// Example
+const array = [2, 23, 4, 4, 2, 4, 2, 4, 2, 4, 23, 4, 1];
+console.log(bubbleSortByFrequency(array));
