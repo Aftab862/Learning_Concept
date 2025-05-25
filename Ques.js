@@ -504,3 +504,56 @@ function bubbleSortByFrequency(arr) {
 // Example
 const array = [2, 23, 4, 4, 2, 4, 2, 4, 2, 4, 23, 4, 1];
 console.log(bubbleSortByFrequency(array));
+// -------------------------Palindrome Checker inplace-------------------
+function isPalindrome(str) {
+  str = str.toLowerCase().replace(/\s/g, "");
+  let left = 0;
+  let right = str.length - 1;
+
+  while (left < right) {
+    if (str[left] !== str[right]) return false;
+    left++;
+    right--;
+    // optional optimization to stop early
+  }
+
+  return true;
+}
+
+console.log(isPalindrome("racecar")); // true
+console.log(isPalindrome("javascript")); // false
+
+// -------------------------------Anagram Checker-------------------
+// An anagram is when you rearrange the letters of one word to form another valid word.
+// Both words must have:
+// the same letters
+// the same frequency of each letter
+// but possibly in different order
+
+function isAnagram(str1, str2) {
+  // Step 1: Remove spaces & convert to lowercase
+  str1 = str1.replace(/\s/g, "").toLowerCase();
+  str2 = str2.replace(/\s/g, "").toLowerCase();
+
+  // Step 2: If lengths are different, can't be anagram
+  if (str1.length !== str2.length) return false;
+
+  // Step 3: Create frequency maps
+  const count1 = {};
+  const count2 = {};
+
+  for (let char of str1) {
+    count1[char] = (count1[char] || 0) + 1;
+  }
+
+  for (let char of str2) {
+    count2[char] = (count2[char] || 0) + 1;
+  }
+
+  // Step 4: Compare maps
+  for (let key in count1) {
+    if (count1[key] !== count2[key]) return false;
+  }
+
+  return true;
+}
