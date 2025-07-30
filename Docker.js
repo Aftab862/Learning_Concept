@@ -14,7 +14,7 @@
 // You build a React app on your PC with Node.js 18. Your teammate has Node.js 16, and the app doesn’t work for them.
 
 // 🔹 Example With Docker:
-// You create a Docker container with Node.js 18 and your React app inside it. Now, 
+// You create a Docker container with Node.js 18 and your React app inside it. Now,
 // anyone can run it, no matter their system, because the container includes everything needed.
 
 
@@ -23,7 +23,7 @@
 // 🔹 It works like a lightweight virtual machine, but faster and more efficient.
 
 // 🔹 Real-World Example:
-// Think of a shipping container on a cargo ship. No matter what's inside (cars, electronics, furniture), 
+// Think of a shipping container on a cargo ship. No matter what's inside (cars, electronics, furniture),
 // the container works the same way everywhere.
 // 👉 Similarly, a Docker container ensures your app runs the same way everywhere.
 
@@ -142,7 +142,7 @@
 
 
 
-// Below is a visual representation to clarify the relationship 
+// Below is a visual representation to clarify the relationship
 // between your React app's build process, the Dockerfile, the Docker image, and the container:
 
 // +----------------------------+
@@ -192,3 +192,48 @@
 // |   Access in Web Browser    |
 // | (http://localhost:3000)    |
 // +----------------------------+
+
+
+// ----------------------- basic commands--------------
+// docker ps
+// docker exec -it container_name sh
+
+
+// --------------------------db Connection---------------
+
+// docker exec -it fullstack-db-1 sh
+// psql -U postgres
+// \l                    -- List databases
+// \c your_db_name       -- Connect to a specific DB
+// \dt                   -- Show all tables
+// SELECT * FROM table_name;  -- View table data
+// SELECT * FROM "auth_users";
+
+
+
+
+
+
+
+// 🐳 Image Commands
+
+// docker build -t my-app .         # Build image from Dockerfile
+// docker images                    # List images
+// docker rmi IMAGE_ID              # Remove an image
+
+
+
+// 📦 Container Commands
+
+// docker run -d -p 3000:3000 my-app   # Run container in background
+// docker ps                          # List running containers
+// docker stop CONTAINER_ID           # Stop a container
+// docker rm CONTAINER_ID             # Remove a container
+// docker exec -it CONTAINER_ID sh    # Open shell inside container
+
+
+// ⚙️ Docker Compose
+
+// docker-compose up --build         # Build & start all services
+// docker-compose down               # Stop and remove all services
+// docker-compose exec backend sh    # Shell into backend container
