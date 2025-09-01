@@ -22,10 +22,10 @@
 
 // ----------------------------Quick Comparison--------------------
 
-// Method | Calls function immediately | Arguments passed as | Returns
-// call | ✅ Yes | Individual values | Result
-// apply | ✅ Yes | Array | Result
-// bind | ❌ No (returns a function) | Individual values | Function
+// Method | Calls function immediately |  Arguments passed as | Returns
+// call   | ✅ Yes                     | Individual values    | Result
+// apply  | ✅ Yes                     | Array                | Result
+// bind   | ❌ No (returns a function) | Individual values    | Function
 
 // --------------✅ Why we use call, apply, and bind--------------------
 // They allow you to:
@@ -50,3 +50,6 @@
 
 //   // Borrow greet method from person1 and use it on person2
 //   person1.greet.call(person2); // Hello, I am Ali
+
+
+
