@@ -2,7 +2,7 @@
 // clousers form when inner function has access to its outerfunction variables even after the outer function has finished its execution
 // Closures: Allow inner functions to access outer function variables even after the outer function has executed.
 // Scope Chain: Variables are resolved by looking first in the local scope, then in outer scopes.
-// Usage: Closures are useful for data privacy, currying, and more.
+// Usage: Closures are useful for data privacy, currying, encapsulation and more.
 
 function Outer() {
     count = 0;
