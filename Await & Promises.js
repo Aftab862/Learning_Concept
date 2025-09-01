@@ -29,9 +29,9 @@
 // Returns the first successfully resolved Promise. Ignores failures.
 
 
-const fast = Promise.reject("Error occurred");
-const slow = Promise.resolve(10);
+// const fast = Promise.reject("Error occurred");
+// const slow = Promise.resolve(10);
 
-Promise.race([slow, fast])
-    .then(console.log)
-    .catch(console.error);  // ❌ Fails immediately due to p3 rejecting
+// Promise.race([slow, fast])
+//     .then(console.log)
+//     .catch(console.error);  // ❌ Fails immediately due to p3 rejecting
