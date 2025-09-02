@@ -29,3 +29,18 @@
 
 // Once the function finishes execution, React triggers a single re-render and updates the state.
 // During this re-render, React uses the latest state value and updates the UI.
+
+
+//------------------------------------------if we use mixed direct and functional update---------------------
+//   function handleClick() {
+//     setCount(count + 1);             // direct update
+//     setCount(prev => prev + 1);      // functional update
+//     setCount(count + 1);             // direct update again
+//   }
+// setCount(count + 1) → this uses stale count = 0 → enqueues 1.
+
+// setCount(prev => prev + 1) → React says: “wait, I’ll apply this to the latest value” → takes the result of previous update (1) → enqueues 2.
+
+// setCount(count + 1) → again uses stale count = 0 → enqueues 1.
+
+// final output is: 1;

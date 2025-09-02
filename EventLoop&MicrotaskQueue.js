@@ -11,6 +11,9 @@
 // 2️⃣ Web APIs → Handles async operations (setTimeout, fetch, DOM events).
 // 3️⃣ Callback Queue & Microtask Queue → Stores async tasks to be executed later.
 
+// When you use setTimeout, fetch, or add event listeners, the browser handles them outside of JavaScript.
+
+
 // 2️⃣ How Does the Event Loop Work?
 // JavaScript runs synchronous code first (using the Call Stack).
 // If it encounters an async operation, it hands it off to the Web APIs (like setTimeout).
