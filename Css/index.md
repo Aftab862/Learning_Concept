@@ -37,6 +37,14 @@ inline: sits beside others, no height/width control.
 inline-block: inline behavior with block control.
 
 
+| Property                       | Inline                           | Inline-block                             |
+| ------------------------------ | -------------------------------- | ---------------------------------------- |
+| Width/Height work              | ❌ No                             | ✅ Yes                                    |
+| Top/Bottom Padding visible     | ✅ Yes (but not layout-affecting) | ✅ Yes                                    |
+| Top/Bottom Margin moves layout | ❌ No                             | ✅ Yes                                    |
+| Acts like text                 | ✅ Yes                            | ✅ Yes (but behaves more like a mini box) |
+
+
 
 9. What’s the difference between Flexbox and Grid?
 
