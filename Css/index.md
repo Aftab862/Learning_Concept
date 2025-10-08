@@ -68,3 +68,6 @@ Reflow: recalculating layout.
 
 Repaint: updating pixels after layout changes.
 Too many reflows = performance death.
+
+Reflow: You move the walls of your house → everything must be measured again.
+Repaint: You just change the wallpaper → no measuring, just paint.
