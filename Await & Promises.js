@@ -35,3 +35,9 @@
 // Promise.race([slow, fast])
 //     .then(console.log)
 //     .catch(console.error);  // ❌ Fails immediately due to p3 rejecting
+
+
+// 7. Explain middleware in Express
+
+// Functions that run between request and response.
+// Used for logging, auth, error handling, etc.

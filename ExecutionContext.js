@@ -102,3 +102,15 @@ infiniteRecursion();
 // | Arrow function                 | Inherits from surrounding scope |
 
 
+
+// 2. What’s the difference between Process and Thread in Node.js?
+
+// Node.js runs on a single thread, but under the hood it uses multiple threads for I/O through the libuv thread poo
+
+
+// | Concept         | **Process**                                    | **Thread**                                       |
+// | --------------- | ---------------------------------------------- | ------------------------------------------------ |
+// | Definition      | Independent execution unit with its own memory | Lightweight unit sharing memory within a process |
+// | Memory          | Has its own                                    | Shared with other threads                        |
+// | Communication   | Through IPC (slow)                             | Through shared memory (fast)                     |
+// | Node.js example | Using `child_process`                          | Internal event loop and worker threads           |
