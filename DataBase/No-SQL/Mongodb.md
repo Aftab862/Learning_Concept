@@ -72,6 +72,20 @@ const hits = await Post.find({ $text: { $search: 'MongoDB' } });
 
 const users = await User.find({ name: { $regex: /aftab/i } });
 
+
+$regex → pattern match operator
+
+/@gmail\.com$/ → matches anything that ends with @gmail.com
+
+$ → asserts end of string
+
+\. → matches a literal dot, not “any character”
+
+^af -> mathes anything start with af
+
+
+
+
 ----------------------------Upsert-----------------------
 An upsert is an “update + insert” operation: if any document(s) match your query filter, MongoDB updates them; if none match, it inserts a new document built from your filter + update.
 
