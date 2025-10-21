@@ -10,10 +10,10 @@
  * Object.assign({}, obj)
  */
 
-const exm_obj = { a: 1, b: { c: 2 } };
-const shallow = { ...exm_obj };
+const obj1 = { a: 1, b: { c: 2 } };
+const shallow = { ...obj1 };
 shallow.b.c = 99;
-console.log(exm_obj.b.c); // 99 (same reference)
+console.log(obj1.b.c); // 99 (same reference)
 
 
 /**
@@ -27,7 +27,7 @@ console.log(exm_obj.b.c); // 99 (same reference)
  * Custom recursive function
  */
 
-const obj = { a: 1, b: { c: 2 } };
-const deep = structuredClone(obj);
+const obj2 = { a: 1, b: { c: 2 } };
+const deep = structuredClone(obj2);
 deep.b.c = 99;
-console.log(obj.b.c); // 2 (independent)
+console.log(obj2.b.c); // 2 (independent)
