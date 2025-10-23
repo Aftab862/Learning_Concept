@@ -382,6 +382,21 @@ for (let n = 0; n < nums.length; n++) {
   }
 }
 
+
+function findPair(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        console.log("found:", nums[i], nums[j]);
+        return [i, j];
+      }
+    }
+  }
+  return [];
+}
+
+console.log(findPair([1, 2, 4, 5, 8], 9));
+
 // -------------------------------------Calculate the sum of all elements in this longest unique subarray.
 // function longestUniqueSubarray(s) {
 //   let maxLength = 0;
