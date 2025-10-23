@@ -96,7 +96,6 @@ function ExampleUseRef() {
  *    const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
  *  - first argument is a function that returns the computed value.
  *  - second argument is an array of dependencies that determine when to recompute the value.
-
 */
 
 function ExampleUseMemo() {
