@@ -12,11 +12,6 @@
 //  The updated state is available only after the next render, so logging state immediately after setState gives the old value.
 
 
-
-
-
-
-
 // How setState Works in React (Step-by-Step)
 // 1️⃣ State Updates Are Scheduled, Not Immediate
 
