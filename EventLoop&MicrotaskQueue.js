@@ -47,10 +47,10 @@ console.log("End");
 // 🟢 Final Output:
 
 
-// Start  
-// End  
-// Promise resolved  
-// Timeout  
+// Start
+// End
+// Promise resolved
+// Timeout
 
 
 
@@ -61,8 +61,8 @@ console.log("End");
 //                   ↓
 // ┌────────────────────────────────────────────┐
 // │        MICROTASK QUEUE                     │
-// │  - Promises (.then, .catch)                │
 // │  - process.nextTick (Node.js)              │
+// │  - Promises (.then, .catch)                │
 // │  - queueMicrotask()                        │
 // │  - MutationObserver                        │
 // └────────────────────────────────────────────┘
@@ -99,4 +99,3 @@ console.log("End");
 // 4. nextTick     ← process.nextTick runs FIRST
 // 3. Promise      ← Then Promises
 // 2. setTimeout   ← Then setTimeout
-```
