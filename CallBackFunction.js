@@ -8,17 +8,19 @@
 // Example of a Callback Function
 function fetchData(callback) {
     // Simulating a data fetch with a timeout
-    setTimeout(() => {
-        const data = { name: "John Doe", age: 30 };
-        // Invoking the callback function with the fetched data
-        callback(data);
-    }, 2000);
-}   
+    name = "hammad";
+    console.log("Fetching data...");
+    // setTimeout(() => {
+    const data = { uname: this.name, age: 30 };
+    // Invoking the callback function with the fetched data
+    callback(data);
+    // }, 1000);
+}
 
 // Using the fetchData function with a callback
-fetchData(function(data) {
-    console.log("Fetched Data:", data);
-});
+// fetchData(function (data) {
+//     console.log("Fetched Data:", data);
+// });
 // Example of using an arrow function as a callback
 fetchData((data) => {
     console.log("Fetched Data with Arrow Function:", data);
