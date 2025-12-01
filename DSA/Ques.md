@@ -59,3 +59,24 @@ function countFrequency(nums) {
 const nums = [3, 5, 3, 2, 5, 3];
 console.log("Frequency map:", countFrequency(nums));
 // Output: Map(3) { 3 => 3, 5 => 2, 2 => 1 }
+<!-- ------------------------------------------------------------------------------- -->
+// Problem: Best Time to Buy and Sell Stock reutrn only the maxProfit
+// Logic: Track minimum price; calculate profit for current price; update maximum profit.
+
+function maxProfit(prices) {
+    let minPrice = Infinity;
+    let maxProfit = 0;
+
+    for (let price of prices) {
+
+        if (price < minPrice) {
+            minPrice = price; // update min price
+        }
+        maxProfit = Math.max(maxProfit, price - minPrice);
+    }
+
+    return { "MaxProfit ": maxProfit, "MinPrice ": minPrice };
+}
+
+const prices = [1, 2, 3, 4, 5];
+console.log("Maximum Profit:", maxProfit(prices)); // Output: 5
