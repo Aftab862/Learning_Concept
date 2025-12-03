@@ -108,4 +108,19 @@ function longestUniqueSubstring(s) {
 
 const str = "abcabcdbb";
 console.log(longestUniqueSubstring(str));
+<!-- ----------------------------------------------------------------------------- -->
+// Problem: Remove duplicates from array `abc` using push/includes
+// Solution: Iterate and push only unique elements
 
+const abc = "aabbccdde";
+const newStr = [];
+
+for (let i = 0; i < abc.length; i++) {
+    if (!newStr.includes(abc[i])) {
+        newStr.push(abc[i]);
+    }
+}
+
+// Output
+console.log("Original Array:", abc);
+console.log("As String:", newStr.join(''));
