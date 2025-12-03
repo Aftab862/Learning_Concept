@@ -80,3 +80,32 @@ function maxProfit(prices) {
 
 const prices = [1, 2, 3, 4, 5];
 console.log("Maximum Profit:", maxProfit(prices)); // Output: 5
+<!-- ------------------------------------------------------------------------------------->
+// Problem: Find longest substring without repeating characters
+// Logic: Har starting index se unique chars collect karo until duplicate appears.
+
+function longestUniqueSubstring(s) {
+    let maxLength = 0;
+
+    for (let i = 0; i < s.length; i++) {
+        let result = [];
+
+        for (let j = i; j < s.length; j++) {
+            if (result.includes(s[j])) {
+                break;
+            } else {
+                result.push(s[j]);
+            }
+
+            if (result.length > maxLength) {
+                maxLength = result.length;
+            }
+        }
+    }
+
+    return maxLength;  // ✔ AB Sahi jagah
+}
+
+const str = "abcabcdbb";
+console.log(longestUniqueSubstring(str));
+
