@@ -8,22 +8,22 @@
 //
 // Example: Input field controlled by React state
 
-import { useState } from "react";
+// import { useState } from "react";
 
-function ControlledInput() {
-    const [name, setName] = useState("");
+// function ControlledInput() {
+//     const [name, setName] = useState("");
 
-    return (
-        <div>
-            <input
-                type="text"
-                value={name}                 // React controls the value
-                onChange={(e) => setName(e.target.value)}
-            />
-            <p>Hello, {name}</p>           // UI updates automatically with state
-        </div>
-    );
-}
+//     return (
+//         <div>
+//             <input
+//                 type="text"
+//                 value={name}                 // React controls the value
+//                 onChange={(e) => setName(e.target.value)}
+//             />
+//             <p>Hello, {name}</p>           // UI updates automatically with state
+//         </div>
+//     );
+// }
 
 // 🔹 Uncontrolled Component
 // A component is "uncontrolled" when the DOM or a third-party library manages
