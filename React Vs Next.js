@@ -67,3 +67,12 @@
 // so it becomes interactive. If server and client markup differ, React may log warnings and re-render parts.
 // -Hydration is when React converts the pre-rendered HTML from the server into a fully interactive application by attaching event handlers.
 
+// ===============================Note=====================
+// server side component cannot use browser apis like localStorage, window, document etc.
+// because these apis are not available on the server side.
+// They are only available in the browser environment. Attempting to use
+// these apis in a server component will result in errors during server-side rendering.
+
+// example
+// we cannot use localStorage in server component.
+// so we cannot use jwt in localStorage we use cookies instead.
