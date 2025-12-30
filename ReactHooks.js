@@ -19,7 +19,7 @@ import { useState, useEffect, useContext, useReducer, useRef } from 'react';
  *    }, [count]);
  */
 function ExampleUseEffect() {
-  const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
     useEffect(() => {
         document.title = `You clicked ${count} times`;
     }, [count]);
@@ -173,3 +173,32 @@ export {
  * React Hooks are powerful tools that allow you to manage state, side effects, context, and more in functional components.
  * They help keep your code clean and organized while providing the same capabilities as class components.
  */
+
+// 🔹 1️⃣ Hooks (React/Next.js)
+// Hooks are special functions in React that let you use state and lifecycle features in functional components without using class components.
+// 🔹 2️⃣ Custom Hooks
+// Custom Hooks are user-defined functions that start with use and let you reuse component logic (state, effects, etc.) across multiple components.
+
+
+
+// ===============================Example
+
+// import { useState, useEffect } from "react";
+
+// function useFetch(url) {
+//   const [data, setData] = useState(null);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     fetch(url)
+//       .then(res => res.json())
+//       .then(data => {
+//         setData(data);
+//         setLoading(false);
+//       });
+//   }, [url]);
+
+//   return { data, loading };
+// }
+
+// export default useFetch;
